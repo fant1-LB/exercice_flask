@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{identifiant}}</title>
+    
+</head>
+{% block body %}
+<h1>Bienvenue sur mon explorateur de wikidata</h1>
+<h2>Statut de la requête :</h2>
+{% if statut == 200 %}
+<p> Code http : {{statut}}</p>
+<p> Infos : l'encoding est de type : {{code}}, et le contenu de type {{infos_type}}.</p>
+<p>Les données qui nous intéressent, c'est affreusement moche mais voila : {{data_json}} </p>
+{%else%}
+<p>ERREUR, les données ne sont pas disponibles ou n'existent pas.</p>
+{%endif%}
+{%endblock%}
+</html>
